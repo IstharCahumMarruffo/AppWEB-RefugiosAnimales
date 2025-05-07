@@ -1,0 +1,100 @@
+<%- include('templates/cabecera',{tituloPag:'inicio', css:'indexstyle'})%>
+<body>
+<div class="container"> 
+<div class="header">
+<%- include('templates/navbar')%>
+</div>
+
+    <div class="centro">
+    <div class="banner-inicio">
+        <img src="img/perroinicio.jpg" class="imagen-fondo" alt="Imagen de adopción">
+        <h1 class="mensaje-banner">Adopta amor, cambia una vida.</h1>
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <p class="reflexion"> 
+        Nunca imaginé que detrás de esos barrotes, en una esquina olvidada del mundo, alguien como tú me encontraría. No tenía esperanza, apenas fuerzas. Mis ojos ya no brillaban y mi cola había olvidado cómo moverse de alegría. Cada día era igual: silencio, soledad, y el eco de otros como yo, esperando algo que tal vez nunca llegaría.
+
+Pero ese día llegaste tú. No sabías mi historia. No sabías cuántas veces me ignoraron o cuánto me dolió ser abandonado. Y aún así, me miraste como si valiera todo el amor del mundo. Me ofreciste tu mano, tu voz suave, tu paciencia. Me ofreciste un hogar.
+
+Desde ese momento, algo dentro de mí comenzó a sanar. Volví a confiar. Volví a jugar. Volví a amar. Me enseñaste que no todos se van, que hay corazones dispuestos a rescatar los pedazos rotos y convertirlos en familia.
+
+Adoptar no cambia solo una vida... cambia dos. Porque mientras me dabas una segunda oportunidad, tú también descubrías lo que significa amor sin condiciones, compañía sin palabras y gratitud infinita.
+
+Gracias por elegirme. Gracias por ver lo que otros no vieron. Gracias por demostrar que todos merecemos un final feliz.
+    </p>
+    <div style="max-width: 800px; margin: auto; padding-top: 20px;">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+    
+                <div class="carousel-item active">
+                    <div class="card border-primary mb-3 mx-auto">
+                        <div class="card-body text-center">
+                            <p class="card-text" style="font-size:x-large; color: black;">Adoptar es un acto de amor incondicional. No solo le das un hogar a un animal, le das una nueva historia que contar.</p>
+                            <img src="img/carr1.jpg" class="mx-auto d-block" alt="Imagen 1" style="width: 100%; height: auto;">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="carousel-item">
+                    <div class="card border-primary mb-3 mx-auto">
+                        <div class="card-body text-center">
+                            <p class="card-text" style="font-size:x-large; color: black;">Cada animal adoptado lleva consigo cicatrices invisibles. Con paciencia, esas heridas se convierten en lazos eternos.</p>
+                            <img src="img/carr2.jpg" class="mx-auto d-block" alt="Imagen 2" style="width: 100%; height: auto;">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="carousel-item">
+                    <div class="card border-primary mb-3 mx-auto">
+                        <div class="card-body text-center">
+                            <p class="card-text" style="font-size:x-large; color: black;">Antes de ti, solo conocía el frío del abandono. Hoy, conozco el calor de un abrazo.</p>
+                            <img src="img/carr3.jpg" class="mx-auto d-block" alt="Imagen 3" style="width: 100%; height: auto;">
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </div>
+    
+    <h1>¿Cómo ayudamos?</h1>
+<div class="botones">
+   
+    <div class="imagen-link">
+        <a href="#" class="imagen-link-item">
+            <img src="img/ic1.jpg" alt="Imagen 1">
+            <div class="texto-link">Adopción</div>
+        </a>
+    </div>
+    <div class="imagen-link">
+        <a href="/cuidados" class="imagen-link-item">
+            <img src="img/ic2.jpg" alt="Imagen 2">
+            <div class="texto-link">Cuidados</div>
+        </a>
+    </div>
+    <div class="imagen-link">
+        <a href="/link3" class="imagen-link-item">
+            <img src="img/ic3.png" alt="Imagen 3">
+            <div class="texto-link">Refugio</div>
+        </a>
+    </div>
+</div>
+</div>
+<div class="footer">
+    <%- include('templates/footer')%>
+</div>
+</div>
+</body>
+</html>

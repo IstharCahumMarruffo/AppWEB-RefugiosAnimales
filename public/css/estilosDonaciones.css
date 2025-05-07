@@ -1,0 +1,32 @@
+h2{
+    color: blue;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.cuentas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px;
+  }
+
+  .cuenta {
+    width: 200px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .cuenta img {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  .cuenta p {
+    margin: 0;
+    font-weight: bold;
+  }

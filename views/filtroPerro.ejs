@@ -1,0 +1,73 @@
+<%- include('templates/cabecera',{tituloPag:'inicio', css:'filtroPerroEstilos'})%>
+<body>
+    <div class="header">
+<%- include('templates/navbar')%>
+    <div class="contenedorFiltroPerro">
+        
+            <p>datos del header</p>
+        </div>
+        </div>
+        <div class="footer">
+            <%- include('templates/footer')%>
+        </div>
+
+        
+        <div class="izquierdo"> 
+            <h2>Dinos qué características buscas en tu perro</h2>
+            <div class="container">
+                <p>Bienvenido, gracias por interesarte en adoptar. </p>
+                
+                <form>
+
+                    <label>Edad del perro</label>
+                    <select id="edadPerro" required>
+                        <optgroup  class="campos" label="Seleccione">
+                            <option>Cachorro</option>
+                            <option>Junior</option>
+                            <option>Adulto</option>
+                            <option>Maduro</option>
+                            <option>Cualquiera</option>
+                        </optgroup>
+                    </select>
+                                                            <br><br>
+                    <label>Sexo</label>
+                    <select id="sexoPerro" required>
+                        <optgroup  class="campos" label="Seleccione">
+                            <option>Macho</option>
+                            <option>Hembra</option>
+                            <option>Cualquiera</option>
+                        </optgroup>
+                    </select>
+                                                            <br><br>
+                    <label>Talla</label>
+                    <select id="tallaPerro" required>
+                        <optgroup  class="campos" label="Seleccione">
+                            <option>Pequeño</option>
+                            <option>Mediano</option>
+                            <option>Grande</option>
+                        </optgroup>
+                    </select>
+                    <br>
+                
+
+                    <div class="buttons">
+                        <button type="submit">Enviar</button>
+                        <button type="reset">Limpiar</button>
+                    </div>
+                </form>
+                </div>
+                <h1 id="prueba" class="clasePrueba">FIN DE LA PAGINA</h1>
+        </div>
+
+        <div class="derecho">
+            <p>Resultados de perrúsqueda:</p>
+            <iframe id="iframeResultadosBusqueda" src="Images/banco_1.jpg" frameborder="2"></iframe>
+        </div>
+
+
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+.contenedorFiltroPerro{
+    /*width: 98vw; /* El contenedor ocupará el 100% del ancho de la ventana */
+    display:grid;
+
+    grid-template-areas:
+  
+    'header header header header header'
+    'izquierdo derecho derecho derecho derecho'
+    'izquierdo derecho derecho derecho derecho'
+    'footer footer footer footer footer';
+    
+    height: 100vh; /* El contenedor ocupará el 100% de la altura de la ventana */
+    background-color: azure;
+}
+
+
+.izquierdo{
+    grid-area: izquierdo;
+}
+.derecho{
+    grid-area: derecho;
+}
+
+.clasePrueba{
+    color:red;
+    font-family:cursive;
+}
+
+
+.encabezado{
+    grid-area:encabezado;
+    background-color: #dd0fdd;
+    border-style:solid;
+    border-width: 1px;
+    border-color: black;
+    max-height: 100px;
+    
+}
+
+
+
+
+.header{
+    grid-area:header;
+    max-height: 50px;
+    background-color: rgb(232, 130, 241);
+    border-style:solid;
+    border-width: 3px;
+    border-color: black;
+}
+
+.footer{
+    grid-area:footer;
+    max-height: 50px;
+    background-color: rgb(240, 161, 130);
+    border-style:solid;
+    border-width: 3px;
+    border-color: black;
+
+    background-image:url('perrosfooter3.jpg'); /* URL de la imagen */
+    background-size:contain;
+    background-position:center; /* Centra la imagen en el contenedor */
+    background-repeat: repeat; /* Evita que la imagen se repita */
+
+}
