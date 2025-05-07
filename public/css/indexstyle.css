@@ -130,3 +130,38 @@ h1{
     text-transform: uppercase;
 }
 
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-left: 60px;
+  gap: 150px;
+  margin-top: 70px;
+}
+
+#loginForm{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 300px;
+  padding: 20px;
+  border: 2px solid #333;
+  margin: 50px auto;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+#registerForm{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 20px;
+  border: 2px solid #333;
+  margin: 50px auto;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+
+}

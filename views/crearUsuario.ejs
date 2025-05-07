@@ -1,0 +1,13 @@
+<%- include('templates/cabecera',{tituloPag:'crearUsuario', css:'indexstyle'})%>
+<body>
+    <h1>Crear Usuario</h1>
+
+    <form action="/usuarios" method="POST">
+        <input type="text" name="nombre">
+        <input type="text" name="apellido">
+        <input type="int" name="edad">
+        <button type="submit">Enviar</button>
+
+    </form>
+    <a href="/usuarios">Usuarios</a>
+</body>

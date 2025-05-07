@@ -1,0 +1,40 @@
+<!-- views/partials/modalAdminCuenta.ejs -->
+<div class="modal fade" id="modalAdminCuenta" tabindex="-1" aria-labelledby="modalAdminCuentaLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form action="/usuarios/actualizar/<%= usuario ? usuario.id : '' %>" method="POST" onsubmit="mostrarAlerta()">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAdminCuentaLabel">Administrar Cuenta</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" name="id" value="<%= usuario ? usuario.id : '' %>">
+          <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <p class="form-control-plaintext"><%= usuario ? usuario.nombre : '' %></p>
+          </div>
+          <div class="mb-3">
+            <label for="correo" class="form-label">Correo</label>
+            <input type="email" class="form-control" name="correo" value="<%= usuario ? usuario.correo : '' %>">
+          </div>
+          <div class="mb-3">
+            <label for="contrasena" class="form-label">Nueva contraseña</label>
+            <input type="password" class="form-control" name="contrasena" placeholder="Opcional">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  function mostrarAlerta() {
+      alert("¡Actualización exitosa!");
+  }
+</script>
+
+  

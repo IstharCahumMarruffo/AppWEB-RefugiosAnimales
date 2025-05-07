@@ -1,75 +1,70 @@
-const express = require ('express');
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const session = require('express-session'); // Para manejo de sesiones
 
 const aplicacion = express();
-
 const puerto = 3000;
 
+// Conexión a MongoDB
+const usuario = 'DigitalSource';
+const password = '12345';
+const nombreBD = 'Prueba';
+const uri = `mongodb+srv://${usuario}:${password}@tallerweb.hb19m0o.mongodb.net/${nombreBD}?retryWrites=true&w=majority&appName=TallerWeb`;
+
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('✅ Conexión exitosa a MongoDB'))
+  .catch(e => console.log('❌ Error de conexión', e));
+
+// Configuración de Express
+aplicacion.use(bodyParser.urlencoded({ extended: false }));
+aplicacion.use(bodyParser.json());
+
+// Configuración de sesiones
+aplicacion.use(session({
+  secret: 'miClaveSecreta',
+  resave: false,
+  saveUninitialized: true
+}));
+
+aplicacion.use((req, res, next) => {
+    res.locals.usuario = req.session.usuario;
+    next();
+  });
+  
 aplicacion.set('view engine', 'ejs');
-aplicacion.set('views',__dirname+'/views')
+aplicacion.set('views', __dirname + '/views');
+aplicacion.use(express.static(__dirname + '/public'));
 
-aplicacion.use(express.static(__dirname+'/public'));
+// Rutas de autenticación
+aplicacion.use('/', require('./router/autenticacion'));
 
-aplicacion.get('/',(req,resp)=>{
-    resp.render('index')
+// Rutas adicionales de usuarios
+aplicacion.use('/usuarios', require('./router/usuarios'));
+
+// Páginas estáticas
+aplicacion.get('/', (req, resp) => {
+  resp.render('index');
 });
 
-aplicacion.get('/contacto', (req,resp)=>{
-    resp.render('contacto')
-})
+aplicacion.get('/contacto', (req, resp) => {
+  resp.render('contacto');
+});
 
 aplicacion.get('/donaciones', (req, res) => {
-    res.render('donaciones'); 
+  res.render('donaciones');
 });
 
 aplicacion.get('/cuidados', (req, res) => {
-    res.render('cuidados'); 
+  res.render('cuidados');
 });
 
-aplicacion.use((req,resp,next)=>{
-    resp.status(404).render('404')
-})
-
-aplicacion.listen (puerto, ()=>{
-    console.log('Escucahndo las peticiones:D desde el puerto', puerto)
+// Ruta 404
+aplicacion.use((req, resp, next) => {
+  resp.status(404).render('404');
 });
 
-
-
-/*const http = require('http');
-
-const servidor = http.createServer((req, resp)=>{
-    resp.end('Esto es una respuesta a tu solicitud')
+// Iniciar servidor
+aplicacion.listen(puerto, () => {
+  console.log(`🚀 Escuchando las peticiones desde el puerto ${puerto}`);
 });
-
-const puerto=3000;
-
-servidor.listen(puerto,()=>{
-    console.log("Servidor escuchando solicitudes")
-
-
-
-/*const express = require ('express');
-
-const aplicacion = express();
-
-const puerto = 3000;
-
-aplicacion.get('/',(req,resp)=>{
-    resp.send('Pagina de inicio')
-});
-
-aplicacion.listen (puerto, ()=>{
-    console.log('Escucahndo las peticiones:D desde el puerto', puerto)
-});*/
-
-/*const http = require('http');
-
-const servidor = http.createServer((req, resp)=>{
-    resp.end('Esto es una respuesta a tu solicitud')
-});
-
-const puerto=3000;
-
-servidor.listen(puerto,()=>{
-    console.log("Servidor escuchando solicitudes")
-});*/

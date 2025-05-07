@@ -73,7 +73,7 @@ Gracias por elegirme. Gracias por ver lo que otros no vieron. Gracias por demost
 <div class="botones">
    
     <div class="imagen-link">
-        <a href="#" class="imagen-link-item">
+        <a href="/autenticacion" class="imagen-link-item">
             <img src="img/ic1.jpg" alt="Imagen 1">
             <div class="texto-link">Adopción</div>
         </a>
@@ -95,6 +95,8 @@ Gracias por elegirme. Gracias por ver lo que otros no vieron. Gracias por demost
 <div class="footer">
     <%- include('templates/footer')%>
 </div>
+<%- include('templates/modalUsuario', { usuario: usuario || {} }) %>
+
 </div>
 </body>
 </html>
