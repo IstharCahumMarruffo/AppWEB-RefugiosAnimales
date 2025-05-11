@@ -1,0 +1,59 @@
+<!-- Modal Crear/Editar Formulario de Adopción -->
+<div class="modal fade" id="modalEditarFormulario" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <% if (formulario) { %>
+        <form action="/formularioadopcion/actualizarform/<%= formulario._id %>" method="POST" onsubmit="mostrarAlerta()">
+      <% } else { %>
+        <form action="/formularioadopcion/crearform" method="POST" onsubmit="mostrarAlerta()">
+      <% } %>
+
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <%= formulario ? 'Editar Formulario de Adopción' : 'Nuevo Formulario de Adopción' %>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="nombre_completo" class="form-label">Nombre completo</label>
+            <input type="text" class="form-control" id="nombre_completo" name="nombre_completo" value="<%= formulario ? formulario.nombre_completo : '' %>" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" value="<%= formulario ? formulario.telefono : '' %>" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="direccion" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="direccion" name="direccion" value="<%= formulario ? formulario.direccion : '' %>" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="ocupacion" class="form-label">Ocupación</label>
+            <input type="text" class="form-control" id="ocupacion" name="ocupacion" value="<%= formulario ? formulario.ocupacion : '' %>" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="otros_animales" class="form-label">Otros animales</label>
+            <input type="text" class="form-control" id="otros_animales" name="otros_animales" value="<%= formulario ? formulario.otros_animales : '' %>" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="motivos" class="form-label">Motivos para adoptar</label>
+            <textarea class="form-control" id="motivos" name="motivos" rows="3" required><%= formulario ? formulario.motivos : '' %></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

@@ -1,66 +1,74 @@
 <%- include('templates/cabecera',{tituloPag:'inicio', css:'estilosDonaciones'})%>
+
 <body>
 
-<%- include('templates/navbar')%>
+  <div class="header">
+    <%- include('templates/navbar')%>
+  </div>
 
+  <div class="container">
+    <div class="centro">
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-            
-         <h2 >Tu apoyo es muy importante para continuar con esta labor, con tu donativo podemos 
-            solventar gastos como: </h2>
-        <ul>
-            <li>Alimento para perros</li>
-            <li>Insumos veterinarios para la rehabilitación de los peluditos</li>
-            <li>Gastos administrativos</li>
-        </ul>
-        <div class="cuentas">
+  
+          <h2 >Tu apoyo es muy importante para continuar con esta labor, con tu donativo podemos solventar gastos como: </h2>
+          <ul>
+              <li>Alimento para perros</li>
+              <li>Insumos veterinarios para la rehabilitación de los peluditos</li>
+              <li>Gastos administrativos</li>
+          </ul>
+  
+          <div class="cuentas">
             <div class="cuenta">
               <img src="img/banco_1.jpg" alt="Banco 1">
               <p>Cuenta: 015200258796</p>
             </div>
+            
             <div class="cuenta">
               <img src="img/banco_2.jpg" alt="Banco 2">
               <p>Cuenta: 015200258796</p>
             </div>
+            
             <div class="cuenta">
               <img src="img/banco_3.jpg" alt="Banco 3">
               <p>Cuenta: 015200258796</p>
             </div>
+            
             <div class="cuenta">
               <img src="img/banco_4.jpg" alt="Banco 4">
               <p>Cuenta: 015200258796</p>
             </div>
+  
             <div class="cuenta">
               <img src="img/banco_5.jpg" alt="Banco 5">
               <p>Cuenta: 015200258796</p>
             </div>
+            
             <div class="cuenta">
               <img src="img/banco_6.jpg" alt="Banco 6">
               <p>Cuenta: 015200258796</p>
             </div>
+            
             <div class="cuenta">
               <img src="img/banco_7.jpg" alt="Banco 7">
               <p>Cuenta: 015200258796</p>
             </div>
+              
             <div class="cuenta">
               <img src="img/banco_8.jpg" alt="Banco 8">
               <p>Cuenta: 015200258796</p>
             </div>
           </div>
-          
-
-        </div>
+      </div>
       </nav>
+   </div>
+  </div>
 
+  <%- include('templates/modalUsuario', { usuario: usuario || {} }) %>
 
-
-
-      <%- include('templates/footer')%>
-
-
-
-
-      <%- include('templates/modalUsuario', { usuario: usuario || {} }) %>
-
+  <div class="footer">
+        <%- include('templates/footer')%>
+  </div>
+  <script src="/javascrip/modal.js" > </script>
 </body>
 </html>

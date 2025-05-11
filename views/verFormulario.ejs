@@ -1,0 +1,29 @@
+<%- include('templates/cabecera',{tituloPag:'datos', css:'form'})%>
+<body>
+    
+    <div class="header">
+        <%- include('templates/navbar')%> 
+    </div>
+
+    <div class="container" id="form">
+
+        <div class="centro">
+            <h1>Detalles del Formulario</h1>
+
+            <p><strong>Nombre completo:</strong> <%= formulario.nombre_completo %></p>
+            <p><strong>Teléfono:</strong> <%= formulario.telefono %></p>
+            <p><strong>Dirección:</strong> <%= formulario.direccion %></p>
+            <p><strong>Ocupación:</strong> <%= formulario.ocupacion %></p>
+            <p><strong>Otros animales:</strong> <%= formulario.otros_animales %></p>
+            <p><strong>Motivos:</strong> <%= formulario.motivos %></p>
+            <p><strong>idMascota:</strong> <%= formulario.perroId %></p>
+        </div>
+    </div>
+        
+        <footer>
+            <%- include('templates/footer')%>
+        </footer>
+        
+        <%- include('templates/modalUsuario', { usuario: usuario || {} }) %>
+        <script src="/javascrip/modal.js" > </script>
+</body>

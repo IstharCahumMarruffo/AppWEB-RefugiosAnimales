@@ -1,0 +1,15 @@
+ .container{
+    margin-top: 8%;
+    display:grid;
+    grid-template-areas: 
+    "header"
+    "centro"
+    ;
+  }
+  
+  #form .centro {
+    grid-area: centro;
+    min-height: 100vh;
+    font-family: sans-serif;
+  }
+

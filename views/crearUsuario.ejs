@@ -1,13 +1,28 @@
-<%- include('templates/cabecera',{tituloPag:'crearUsuario', css:'indexstyle'})%>
+<%- include('templates/cabecera', {tituloPag: 'crearUsuario', css: 'form'}) %>
+
 <body>
-    <h1>Crear Usuario</h1>
+  <div class="header">
+    <%- include('templates/navbar')%>
+  </div>
+  
+  <div class="container">
 
-    <form action="/usuarios" method="POST">
-        <input type="text" name="nombre">
-        <input type="text" name="apellido">
-        <input type="int" name="edad">
-        <button type="submit">Enviar</button>
+    <div class="centro">
+        <h1>Crear Usuario</h1>
 
-    </form>
-    <a href="/usuarios">Usuarios</a>
+        <form action="/usuarios" method="POST">
+            <input type="text" name="nombre">
+            <input type="text" name="apellido">
+            <input type="int" name="edad">
+            <button type="submit">Enviar</button>
+    
+        </form>
+        <a href="/usuarios">Usuarios</a>
+      
+    </div>
+
+  <div class="footer">
+    <%- include('templates/footer')%>
+  </div>
 </body>
+</html>

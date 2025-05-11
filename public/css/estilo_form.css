@@ -1,0 +1,135 @@
+.container{
+  font-family: sans-serif;
+  margin-top: 8%;
+  display: grid;
+  grid-template-areas:
+      "menu contenido";
+  grid-template-columns: 20% 1fr;
+}
+
+.contenido {
+  grid-area: centro;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+#menu {
+    grid-area: menu;
+    padding: 15px;
+    height: 100%;
+    border-right: 1px solid #dee2e6;
+}
+  
+#menu .nav-link:hover {
+    background-color: #e9ecef;
+    color: #78c2ad;
+}
+
+.info-section {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .info-section h2, .info-section h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .info-section ul {
+    list-style: disc inside;
+    padding-left: 10px;
+    margin-top: 10px;
+  }  
+
+.contenido {
+    grid-area: contenido;
+    margin-left: 5%;
+    align-content: center;
+}
+
+.ctn-formulario {
+	width: 45%;
+	margin: auto;
+	margin-top: 20px;
+	border-radius: 10px;
+	display: flex;
+	overflow: hidden;
+	font-family: sans-serif;
+    padding: 30px;
+	background: #f7f7f7;
+}
+
+label{
+	display: block;
+	margin-top: 10px;
+	font-size: 18px;
+	font-weight: 300;
+	color:grey;
+}
+
+input, textarea{
+	width: 100%;
+	height: 30px;
+	background:rgba(0,0,0,0);
+	border:0px;
+	outline: 0px;
+	border-bottom: 1px solid #68c2a8;
+	color: gray;
+	font-size: 16px;
+}
+
+input[type="submit"]{
+	width: 100%;
+	height: 50px;
+	margin-top: 40px;
+	color:white;
+	border:0px;
+	background:linear-gradient(to right, #78c2ad, #f3969a);
+	font-weight: 300;
+	cursor: pointer;
+	font-size: 18px;
+}
+
+input[type="submit"]:hover{
+	background:linear-gradient(to right, #f3969a, #78c2ad);
+}
+
+.radio{
+	display: flex;
+	flex-direction: row;
+	margin-top: 15px;
+	align-items: center;
+	gap: 20px;
+	font-size: 15px;
+}
+
+input[type="radio"] {
+    width: 20px; 
+    height: 18px;
+    accent-color: #78c2ad; 
+}
+
+footer {
+    grid-area: footer;
+}
+
+body::-webkit-scrollbar {
+	width: 12px;
+	background: rgba(0, 0, 0, 0.5); 
+  }
+  
+  body::-webkit-scrollbar-thumb {
+	background-image: linear-gradient(to bottom, #78c2ad, #dee2e6, #f3969a); 
+	border-radius: 5px; 
+	border: 1.5px solid #ffffff; 
+  }
+
+  #formulario-adopcion {
+    display: block;
+    min-height: 300px; /* Asegúrate de que tenga suficiente espacio */
+    padding: 20px;
+}

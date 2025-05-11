@@ -13,8 +13,8 @@ const nombreBD = 'Prueba';
 const uri = `mongodb+srv://${usuario}:${password}@tallerweb.hb19m0o.mongodb.net/${nombreBD}?retryWrites=true&w=majority&appName=TallerWeb`;
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('✅ Conexión exitosa a MongoDB'))
-  .catch(e => console.log('❌ Error de conexión', e));
+  .then(() => console.log('Conexión exitosa a MongoDB'))
+  .catch(e => console.log('Error de conexión', e));
 
 // Configuración de Express
 aplicacion.use(bodyParser.urlencoded({ extended: false }));
@@ -28,10 +28,10 @@ aplicacion.use(session({
 }));
 
 aplicacion.use((req, res, next) => {
-    res.locals.usuario = req.session.usuario;
-    next();
-  });
-  
+  res.locals.usuario = req.session.usuario;
+  next();
+});
+
 aplicacion.set('view engine', 'ejs');
 aplicacion.set('views', __dirname + '/views');
 aplicacion.use(express.static(__dirname + '/public'));
@@ -42,29 +42,25 @@ aplicacion.use('/', require('./router/autenticacion'));
 // Rutas adicionales de usuarios
 aplicacion.use('/usuarios', require('./router/usuarios'));
 
+// Rutas de formulario
+aplicacion.use('/formulario', require('./router/formulario'));
+aplicacion.use('/formularioadopcion', require('./router/formularioadopcion')); 
+aplicacion.use('/perros', require('./router/perros'));
+
+aplicacion.use('/filtroPerro', require('./router/perrosRouter'));
+aplicacion.get('/api/sesion', (req, res) => {
+  if (req.session.usuario) {
+    res.json({ activa: true });
+  } else {
+    res.json({ activa: false });
+  }
+});
+
 // Páginas estáticas
-aplicacion.get('/', (req, resp) => {
-  resp.render('index');
-});
-
-aplicacion.get('/contacto', (req, resp) => {
-  resp.render('contacto');
-});
-
-aplicacion.get('/donaciones', (req, res) => {
-  res.render('donaciones');
-});
-
-aplicacion.get('/cuidados', (req, res) => {
-  res.render('cuidados');
-});
-
-// Ruta 404
-aplicacion.use((req, resp, next) => {
-  resp.status(404).render('404');
-});
+// Usar el router
+aplicacion.use('/', require('./router/rutasPagina'));
 
 // Iniciar servidor
 aplicacion.listen(puerto, () => {
-  console.log(`🚀 Escuchando las peticiones desde el puerto ${puerto}`);
+  console.log(`Escuchando las peticiones desde el puerto ${puerto}`);
 });

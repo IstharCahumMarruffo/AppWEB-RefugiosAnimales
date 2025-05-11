@@ -1,0 +1,29 @@
+<%- include('templates/cabecera', {tituloPag: 'modificar', css: 'form'}) %>
+
+<body>
+  <div class="header">
+    <%- include('templates/navbar')%>
+  </div>
+  
+  <div class="container">
+
+    <div class="centro">
+      <h1>Editar Perro</h1>
+
+      <form action="/perros/<%= perro._id %>" method="POST">
+        <label>nombre: <input type="text" name="nombre" value="<%= perro.nombre %>" required></label><br>
+        <label>edad:   <input type="text" name="edad"   value="<%= perro.edad %>"   required></label><br>
+        <label>sexo:   <input type="text" name="sexo"   value="<%= perro.sexo %>"   required></label><br>
+        <label>talla:  <input type="text" name="talla"  value="<%= perro.talla %>"  required></label><br>
+        <button type="submit">Actualizar</button>
+      </form>
+      <a href="/perros">Volver</a>
+      
+    </div>
+
+  <div class="footer">
+    <%- include('templates/footer')%>
+  </div>
+</body>
+</html>
+

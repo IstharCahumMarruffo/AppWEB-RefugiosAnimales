@@ -1,0 +1,125 @@
+<%- include('templates/cabecera', {tituloPag: 'formulario', css: 'estilo_form'}) %>
+
+    <body>
+
+        <div class="header">
+            <%- include('templates/navbar')%>
+        </div>
+
+        <div class="container">
+
+            <nav id="menu">
+                <ul class="nav nav-pills flex-column">
+                  <% if (formulario) { %>
+                    <div style="margin-top: 80px;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/formularioadopcion/verformulario/<%= formulario._id %>">Ver mis datos</a>
+                    </li>
+                    <li class="nav-item">
+                      <form action="/formularioadopcion/eliminarform/<%= formulario._id %>" method="POST" onsubmit="return confirm('¿Estás seguro de eliminar tus datos?')">
+                        <button type="submit" class="btn btn-warning">Eliminar datos</button>
+                    </form>
+                    </li>
+                  </div>
+                <% } else { %>
+                    <li class="nav-item">
+                        <p>No has llenado aún tu formulario de adopción.</p>
+                    </li>
+                <% } %>
+                </ul>
+              </nav>              
+
+              <div class="contenido">
+        
+                <!-- Información--> 
+                <section id="importancia-adopcion" class="info-section">
+                    <h2>¿Por qué es importante adoptar?</h2>
+                    <p>
+                        Adoptar en lugar de comprar salva vidas. Cada año, millones de animales son abandonados o nacen sin hogar.
+                        Cuando adoptas, no solo le das una segunda oportunidad a un animal, también ayudas a reducir la sobrepoblación
+                        y fomentas una cultura más responsable y compasiva.
+                    </p>
+                    <ul>
+                        <li>Salvas una vida y liberas espacio para otros animales en refugios.</li>
+                        <li>Muchos animales adoptados ya están vacunados y esterilizados.</li>
+                        <li>Es más económico y ético que comprar.</li>
+                        <li>Los refugios ofrecen orientación para encontrar tu compañero ideal.</li>
+                    </ul>
+                </section>
+                
+                <section id="estas-listo" class="info-section">
+                    <h2>¿Estás listo para adoptar un gato o un perro?</h2>
+                    <p>Antes de adoptar, es importante reflexionar sobre tu estilo de vida, tus responsabilidades y tu entorno.</p>
+                    <h3>Preguntas clave para ti:</h3>
+                    <ul>
+                        <li>¿Tienes tiempo diario para cuidarlo, jugar y llevarlo al veterinario?</li>
+                        <li>¿Tu situación económica te permite asumir los gastos de alimento, salud y cuidado?</li>
+                        <li>¿Vives en un espacio adecuado para un gato o perro (según su tamaño y necesidades)?</li>
+                        <li>¿Toda tu familia está de acuerdo con la decisión?</li>
+                        <li>¿Estás dispuesto a comprometerte por 10 a 15 años (o más)?</li>
+                    </ul>
+                    <p>
+                        Si respondiste “sí” a la mayoría, ¡Es posible que estés listo para adoptar y transformar tu vida y la de un animal!
+                    </p>
+                </section> 
+                
+                <div id="formulario-adopcion">
+                    <div class="ctn-formulario">
+                        <h1 class="title"></h1>
+                        <form id="formAdopcion" action="/formulario/adopcion" method="POST">
+                            <input type="text" name="perroId" value="<%= perroId %>">
+                            <label>Nombre Completo</label>
+                            <input type="text" name="nombre_completo" required>
+                      
+                            <label>Teléfono</label>
+                            <input type="tel" name="telefono" pattern="[0-9]{10}" required>
+                      
+                            <label>Dirección</label>
+                            <input type="text" name="direccion" required>
+                      
+                            <label>Ocupación</label>
+                            <input type="text" name="ocupacion" required>
+          
+                            <label>¿Tienes otros animales?</label>
+                            <div class="radio">
+                                <input type="radio" name="otros_animales" value="Sí" required>
+                                <label>Sí</label>
+                        
+                                <input type="radio" name="otros_animales" value="No" required>
+                                <label>No</label>
+                            </div>
+                        
+                            <label>Motivo de Adopción</label>
+                            <textarea name="motivos" rows="4" required></textarea>
+        
+                            <input type="submit" value="Confirmar">
+                        </form>
+                    </div>
+                </div>
+              
+            </div>        
+
+        </div>
+
+        <%- include('templates/modalUsuario', { usuario: usuario || {} }) %>
+        <%- include('templates/modalFormulario', { formulario: formulario }) %>
+        
+        <div class="footer">
+            <%- include('templates/footer')%>
+        </div>
+
+        <script src="/javascrip/formulario.js"></script>
+        <script src="/javascrip/modal.js" > </script>
+        
+          document.getElementById("formAdopcion").addEventListener("submit", function(event) {
+            <% if (formulario) { %>
+              alert("¡Ya existe un registro!");
+              event.preventDefault(); 
+            <% } else { %>
+              alert("Su solicitud ha sido enviada");
+            <% } %>
+          });
+        
+  
+    </body>
+</html>

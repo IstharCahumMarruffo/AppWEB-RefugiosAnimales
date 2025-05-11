@@ -1,0 +1,74 @@
+.container{
+    display:grid;
+    grid-template-areas: 
+    "header"
+    "centro"
+    ;
+  }
+  
+  header{
+    grid-area: header;
+  }
+  
+  .centro {
+    grid-area: centro;
+    min-height: 100vh;
+    margin-top: 15%;
+  }
+
+#cuerpo {
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido {
+    max-width: 800px;
+    background-color: #dee2e6;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Títulos */
+.title {
+    font-size: 36px;
+    text-align: center;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.contenido h4 {
+    font-size: 20px;
+    color: #4dbb9c;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Texto descriptivo */
+.text-description {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.7;
+    text-align: justify;
+    margin-top: 30px;
+}
+
+/* Carrusel Bootstrap */
+#carouselExampleIndicators {
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}

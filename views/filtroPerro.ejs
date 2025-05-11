@@ -1,74 +1,151 @@
-<%- include('templates/cabecera',{tituloPag:'inicio', css:'filtroPerroEstilos'})%>
+<%- include('templates/cabecera', {tituloPag: 'inicio', css: 'filtroPerroEstilos'}) %>
 <body>
+  
+  <div class="container">
     <div class="header">
-<%- include('templates/navbar')%>
-    <div class="contenedorFiltroPerro">
-        
-            <p>datos del header</p>
-        </div>
-        </div>
-        <div class="footer">
-            <%- include('templates/footer')%>
-        </div>
-
-        
-        <div class="izquierdo"> 
-            <h2>Dinos qué características buscas en tu perro</h2>
-            <div class="container">
-                <p>Bienvenido, gracias por interesarte en adoptar. </p>
-                
-                <form>
-
-                    <label>Edad del perro</label>
-                    <select id="edadPerro" required>
-                        <optgroup  class="campos" label="Seleccione">
-                            <option>Cachorro</option>
-                            <option>Junior</option>
-                            <option>Adulto</option>
-                            <option>Maduro</option>
-                            <option>Cualquiera</option>
-                        </optgroup>
-                    </select>
-                                                            <br><br>
-                    <label>Sexo</label>
-                    <select id="sexoPerro" required>
-                        <optgroup  class="campos" label="Seleccione">
-                            <option>Macho</option>
-                            <option>Hembra</option>
-                            <option>Cualquiera</option>
-                        </optgroup>
-                    </select>
-                                                            <br><br>
-                    <label>Talla</label>
-                    <select id="tallaPerro" required>
-                        <optgroup  class="campos" label="Seleccione">
-                            <option>Pequeño</option>
-                            <option>Mediano</option>
-                            <option>Grande</option>
-                        </optgroup>
-                    </select>
-                    <br>
-                
-
-                    <div class="buttons">
-                        <button type="submit">Enviar</button>
-                        <button type="reset">Limpiar</button>
-                    </div>
-                </form>
-                </div>
-                <h1 id="prueba" class="clasePrueba">FIN DE LA PAGINA</h1>
-        </div>
-
-        <div class="derecho">
-            <p>Resultados de perrúsqueda:</p>
-            <iframe id="iframeResultadosBusqueda" src="Images/banco_1.jpg" frameborder="2"></iframe>
-        </div>
-
-
+      <%- include('templates/navbar') %>
     </div>
+    
+    <div class="centro">
+      <h1>Bienvenido, gracias por interesarte en adoptar</h1>
+      <h2>Dinos qué características buscas en tu perro</h2>
+      <h2>Perros Registrados</h2>
+      
+      <form method="GET" action="/perros"> 
+        <label>Edad</label>
+        <select name="edad">
+          <option value="cachorro" <%= searchEdad == "cachorro" ? "selected" : "" %>>Cachorro</option>
+          <option value="junior"   <%= searchEdad == "junior"   ? "selected" : "" %>>Junior</option>
+          <option value="adulto"   <%= searchEdad == "adulto"   ? "selected" : "" %>>Adulto</option>
+          <option value="maduro"   <%= searchEdad == "maduro"   ? "selected" : "" %>>Maduro</option>
+        </select>
+        
+        <label>Sexo</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="sexo" value="macho" <%= searchSexo === 'macho' ? 'checked' : '' %> >
+            Macho</label>
+          <label>
+            <input type="radio" name="sexo" value="hembra" <%= searchSexo === 'hembra' ? 'checked' : '' %> >
+            Hembra</label>
+        </div>
 
+        <label>Talla</label>
+        <select name="talla">
+          <option value="pequeño" <%= searchTalla === "pequeño"  ? 'selected' : '' %>> Pequeño   </option>
+          <option value="mediano" <%= searchTalla === "mediano"  ? 'selected' : '' %>> Mediano   </option>
+          <option value="grande"  <%= searchTalla === "grande"   ? 'selected' : '' %>> Grande    </option>
+        </select>
+
+        <button type="submit">Buscar</button>
+        <a href="/perros">Limpiar</a>
+      </form>
+      
+      <p><a href="#" id="protected-link">➕ Agregar Nuevo Perro</a></p>
+      
+      <h2>Sus criterios de búsqueda fueron <%= searchEdad %> - <%= searchSexo %> - <%= searchTalla %> </h2>
+      
+      <% if (perros.length === 0) { %>
+        <p>No se encontraron perros con ese nombre.</p>
+      <% } else { %>
+        <table class="tabla-perros">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Sexo</th>
+              <th>Talla</th>
+              <th>ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% perros.forEach(perro => { %>
+              <tr>
+                <td><%= perro.nombre %></td>
+                <td><%= perro.edad %></td>
+                <td><%= perro.sexo %></td>
+                <td><%= perro.talla %></td>
+                <td><%= perro._id %></td>
+                <td>
+                  <a href="/perros/<%= perro._id %>/edit" class="edit-link">✏️</a>
+                  <form action="/perros/<%= perro._id %>/delete" method="POST" style="display:inline;" class="delete-form">
+                    <button type="submit" class="btn btn-outline-danger">🗑️</button>
+                  </form>
+                  <a href="/formulario?perroId=<%= perro._id %>" class="btn btn-primary">Adoptar</a>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      <% } %>
+      
+    </div>
+    
     <%- include('templates/modalUsuario', { usuario: usuario || {} }) %>
+  </div>
+
+  <div class="footer">
+    <%- include('templates/footer')%>
+</div>
 
 
-</body>
+<!-- Escuchador Listener de eventos, estara al pendiente si se cliquea Eliminar o Editar   -->
+
+<script>
+  const PASSWORD_ADMINISTRADOR="azcapo";                                                ////CLAVE MAGICA
+  document.addEventListener('DOMContentLoaded', () => {
+    const deleteForms = document.querySelectorAll('.delete-form');
+
+    deleteForms.forEach(form => {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault(); 
+
+        const password = prompt('Ingrese la contraseña para eliminar:');
+
+        if (password === PASSWORD_ADMINISTRADOR) { 
+          form.submit(); 
+        } else {
+          alert('Contraseña incorrecta. Unicamente administradores pueden modificar el registro de perros');
+        }
+      });
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const editLinks = document.querySelectorAll('.edit-link');
+
+    editLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault(); 
+
+        const password = prompt('Ingrese la contraseña para editar:');
+
+        if (password === PASSWORD_ADMINISTRADOR) { 
+          window.location.href = this.href; 
+        } else {
+          alert('Contraseña incorrecta. Unicamente administradores pueden modificar el registro de perros');
+        }  
+      });
+    });
+  });
+
+  document.getElementById('protected-link').addEventListener('click', function(event) {
+    event.preventDefault(); // la navegacion NO se efectuará
+
+    const correctPassword = "azcapo"; 
+    const userPassword = prompt("Ingrese la contraseña:");
+
+    if (userPassword === correctPassword) {
+      window.location.href = "/perros/new";
+    } else {
+      alert("Contraseña incorrecta. Unicamente administradores pueden modificar el registro de perros");
+      window.location.href = "/perros";
+    }
+  });
+
+
+          ///////////////////////////////
+</script>  
+<script src="/javascrip/modal.js" > </script>
+  </body>
 </html>

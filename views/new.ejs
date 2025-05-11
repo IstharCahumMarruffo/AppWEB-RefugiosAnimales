@@ -1,0 +1,62 @@
+<%- include('templates/cabecera', {tituloPag: 'Agregar', css: 'form'}) %>
+
+<body>
+
+  <div class="container">
+    <div class="header">
+      <%- include('templates/navbar')%>
+    </div>
+
+    <div class="centro">
+      <h1>Agregar Nuevo Perro</h1>
+    <form action="/perros" method="POST" class="mb-3">
+      <div class="form-group mb-2">
+        <label>Nombre</label>
+        <input type="text" name="nombre" class="form-control" required>
+      </div>
+      
+      <div class="form-group mb-2">
+        <label>Edad</label>
+        <select name="edad" class="form-control" required>
+          <option value="cachorro">cachorro</option>
+          <option value="junior">junior</option>
+          <option value="adulto">adulto</option>
+          <option value="maduro">maduro</option>
+        </select>
+      </div>
+      
+      <div class="form-group mb-2">
+        <label>Sexo</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="sexo" id="hembra" value="Hembra" required>
+          <label class="form-check-label" for="hembra">hembra</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="sexo" id="macho" value="Macho" required>
+          <label class="form-check-label" for="macho">macho</label>
+        </div>
+      </div>
+      
+      <div class="form-group mb-2">
+        <label>Talla</label>
+        <select name="talla" class="form-control" required>
+          <option value="pequeño">pequeño</option>
+          <option value="mediano">mediano</option>
+          <option value="grande">grande</option>
+        </select>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Guardar nuevo perro</button>
+    </form>
+    <a href="/perros" class="btn btn-secondary">Volver</a>
+  </div>
+    </div>
+
+  <%- include('templates/modalUsuario', { usuario: usuario || {} }) %>
+
+  <div class="footer">
+    <%- include('templates/footer')%>
+  </div>
+  <script src="/javascrip/modal.js" > </script>
+</body>
+</html>

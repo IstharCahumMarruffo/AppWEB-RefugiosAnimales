@@ -1,0 +1,49 @@
+.container{
+    margin-top: 8%;
+    display:grid;
+    grid-template-areas: 
+    "header"
+    "centro"
+    ;
+  }
+  
+  header{
+    grid-area: header;
+  }
+
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+.centro {
+    grid-area: centro;
+    min-height: 100vh;
+    font-family: sans-serif;
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.image {
+    text-align: center;
+}
+.image img {
+    max-width: 80%;
+    border-radius: 10px;
+}
+.info, .events {
+    margin-top: 20px;
+}
+.info a, .events a {
+    color: #008CBA;
+    text-decoration: none;
+    font-weight: bold;
+}
+.logo {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}

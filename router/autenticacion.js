@@ -27,7 +27,7 @@ router.post('/register', async (req, res) => {
 
         await nuevoUsuario.save();
         
-        res.redirect('/filtro');
+        res.redirect('/formulario');
     } catch (err) {
         console.error(err);
         res.status(500).send('Error al registrar usuario');
@@ -50,7 +50,7 @@ router.post('/login', async (req, res) => {
         req.session.usuario = {
             nombre: usuario.nombre,
             correo: usuario.correo,
-            id: usuario._id
+            _id: usuario._id
         };
 
         res.redirect('/filtro');
@@ -71,10 +71,20 @@ router.get('/logout', (req, res) => {
 
 router.get('/filtro', (req, res) => {
     if (!req.session.usuario) {
-        return res.redirect('/autenticacion'); // Si no hay sesión, redirigir a autenticación
+        return res.redirect('/autenticacion');
     }
+
     
-    res.render('filtroPerro', { usuario: req.session.usuario });
+    const { edad, sexo, talla, nombre } = req.query;
+
+    res.render('filtroPerro', {
+        usuario: req.session.usuario,
+        searchEdad: edad || '',
+        searchSexo: sexo || '',
+        searchTalla: talla || '',
+        search: nombre || '',
+        perros: [] 
+    });
 });
 
 

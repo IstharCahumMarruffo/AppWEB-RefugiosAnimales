@@ -1,0 +1,82 @@
+<%- include('templates/cabecera', { tituloPag: 'Quiénes Somos', css: 'estilos_nosotros' }) %>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <%- include('templates/navbar')%>
+        </div>
+        
+        <div class="centro">
+        <div id="cuerpo">
+            <div class="contenido">
+                <h1 class="title">¿Quiénes Somos?</h1>
+    
+                <h4>Los animales transforman nuestras vidas. Nosotros buscamos transformar las suyas.</h4>
+    
+                <p class="text-description">
+                    <strong>Huellitas Felices</strong> busca inspirar y promover la adopción responsable de cachorros,
+                    difundiendo información sobre lugares y asociaciones dedicadas al rescate, cuidado y
+                    reubicación de estos maravillosos animales.
+                    <br><br>
+                    A través de la colaboración y la empatía, buscamos ser el puente entre corazones dispuestos y
+                    patitas que anhelan un hogar lleno de amor.
+                    <br><br>
+                    Cada pequeño gesto cuenta, y con tu ayuda podemos marcar una diferencia en la vida de estos
+                    fieles compañeros, brindándoles una segunda oportunidad para vivir y ser felices. 🐾❤️
+                </p>
+            </div>
+        </div>
+    
+        <!-- Carrusel Bootstrap -->
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/img1.jpg" class="d-block w-100" alt="Slide 1">
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="img/img2.jpg" class="d-block w-100" alt="Slide 2">
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="img/img3.jpg" class="d-block w-100" alt="Slide 3">
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="img/img4.jpg" class="d-block w-100" alt="Slide 4">
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="img/img5.jpg" class="d-block w-100" alt="Slide 5">
+                </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    </div>
+
+    <%- include('templates/modalUsuario', { usuario: usuario || {} }) %>
+
+    <div class="footer">
+        <%- include('templates/footer')%>
+    </div>
+    <script src="/javascrip/modal.js" > </script>
+</body>
+</html>

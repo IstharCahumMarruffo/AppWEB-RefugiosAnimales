@@ -1,65 +1,149 @@
-.contenedorFiltroPerro{
-    /*width: 98vw; /* El contenedor ocupará el 100% del ancho de la ventana */
-    display:grid;
-
-    grid-template-areas:
-  
-    'header header header header header'
-    'izquierdo derecho derecho derecho derecho'
-    'izquierdo derecho derecho derecho derecho'
-    'footer footer footer footer footer';
-    
-    height: 100vh; /* El contenedor ocupará el 100% de la altura de la ventana */
-    background-color: azure;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-
-.izquierdo{
-    grid-area: izquierdo;
-}
-.derecho{
-    grid-area: derecho;
-}
-
-.clasePrueba{
-    color:red;
-    font-family:cursive;
+.container{
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "centro"
+    ;   
 }
 
-
-.encabezado{
-    grid-area:encabezado;
-    background-color: #dd0fdd;
-    border-style:solid;
-    border-width: 1px;
-    border-color: black;
-    max-height: 100px;
-    
+header{
+    grid-area: header;
 }
 
-
-
-
-.header{
-    grid-area:header;
-    max-height: 50px;
-    background-color: rgb(232, 130, 241);
-    border-style:solid;
-    border-width: 3px;
-    border-color: black;
+.centro{
+    margin-top: 10%;
+    grid-area: centro;
+    min-height: 100vh;
 }
 
-.footer{
-    grid-area:footer;
-    max-height: 50px;
-    background-color: rgb(240, 161, 130);
-    border-style:solid;
-    border-width: 3px;
-    border-color: black;
+footer {
+    border-style: solid;
+    border-color: bisque;
+    background-color: bisque;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+  }
 
-    background-image:url('perrosfooter3.jpg'); /* URL de la imagen */
-    background-size:contain;
-    background-position:center; /* Centra la imagen en el contenedor */
-    background-repeat: repeat; /* Evita que la imagen se repita */
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
 
+h1 {
+    font-size: 2.5em;
+    margin-top: 30px;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-size: 18px;
+    display: block;
+    padding: 15px;
+    color: #555;
+}
+
+form select, form input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+form select:focus, form input[type="text"]:focus {
+    border-color: #5b9bd5;
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    width: 30%;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a[href="/perros"] {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+a[href="/perros"]:hover {
+    background-color: #d32f2f;
+}
+
+.tabla-perros {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabla-perros th, .tabla-perros td, .tabla-perros th {
+    border: none;
+    padding: 10px;
+    text-align: center;
+}
+
+.tabla-perros .btn {
+    margin: 0 5px;
 }

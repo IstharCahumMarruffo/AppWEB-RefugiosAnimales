@@ -14,29 +14,35 @@
                     <a class="nav-link" href="/donaciones">Donaciones</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Refugios que colaboran</a>
+                    <a class="nav-link" href="/refugios">Refugios que colaboran</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Quienes Somos</a>
+                  <a class="nav-link" href="/cuidados">Cuidados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/nosotros">Quienes Somos</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
                 <% if (usuario) { %>
-                    <li class="nav-item">
-                      <span class="nav-link text-white">👤 <%= usuario.nombre %></span>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalAdminCuenta">Administrar cuenta</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/logout">Cerrar sesión</a>
-                    </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      👤 <%= usuario.nombre %>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalAdminCuenta">Administrar cuenta</a></li>
+                      <li><a class="dropdown-item" href="/formulario">Mi formulario de adopción</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
+                    </ul>
+                  </li>
                 <% } else { %>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/autenticacion">Iniciar sesión</a>
-                    </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/autenticacion">Iniciar sesión</a>
+                  </li>
                 <% } %>
-            </ul>
+              </ul>
+              <img class="logo"  src="img/Logo2.png" alt="Logo">
         </div>
     </div>
   </nav>

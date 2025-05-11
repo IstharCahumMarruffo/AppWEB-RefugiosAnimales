@@ -17,5 +17,14 @@
     "mongoose": "^8.14.1",
     "nodemon": "^3.1.10"
   },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IstharCahum7/tallerWeb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IstharCahum7/tallerWeb/issues"
+  },
+  "homepage": "https://github.com/IstharCahum7/tallerWeb#readme",
   "description": ""
 }

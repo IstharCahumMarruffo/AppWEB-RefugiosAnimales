@@ -1,0 +1,77 @@
+<%- include('templates/cabecera', { tituloPag: 'Refugios', css: 'estilo_refugios' }) %>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <%- include('templates/navbar')%>
+        </div>
+        
+        <div class="centro">
+            <h1>Asociaciones de Adopción en CDMX</h1>
+        <div class="image">
+            <img src="img/fondoLogin.jpg" alt="Perros y Gatos en Adopción">
+        </div>
+
+        <div class="info">
+            <h2>Asociaciones:</h2>
+            <ul>
+                <li>
+                    <img class="logo" src="https://pnamexico.com/wp-content/uploads/2024/05/cropped-PNA-ORI-BCO-204x68.png" alt="Logo Protectora Nacional De Animales">
+                    <a href="https://pnamexico.com/" target="_blank">Protectora Nacional De Animales A.C.</a><br>
+                    Teléfono: 55 5688 2315<br>
+                    Correo: redessociales@pnamexico.com<br>
+                    Redes: <a href="https://www.facebook.com/pnamexico" target="_blank">Facebook</a>
+                </li>
+                <li>
+                    <img class="logo" src="https://www.milagroscaninos.org/wp-content/uploads/2021/10/lmilagros-caninos-logo.webp" alt="Logo Milagros Caninos">
+                    <a href="https://www.milagroscaninos.org/" target="_blank">Milagros Caninos A.C.</a><br>
+                    Teléfono: 55 5548 6156<br>
+                    Redes: <a href="https://www.facebook.com/MilagrosCaninosMexico/" target="_blank">Facebook</a>
+                </li>
+                <li>
+                    <img class="logo" src="https://www.fundaciontepa.org/wp-content/uploads/2017/09/tepa-logo-horizontal.png" alt="Logo Fundación TEPA">
+                    <a href="https://www.fundaciontepa.org/" target="_blank">Fundación TEPA</a><br>
+                    Redes: <a href="https://www.instagram.com/fundaciontepa/" target="_blank">Instagram</a>
+                </li>
+                <li>
+                    <img class="logo" src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=316,fit=crop,q=95/mp8nloN95Ns0w5Ro/logo_patitas-mundo-AMqn6D3ZW0InzKjl.png" alt="Logo Mundo Patitas">
+                    <a href="https://mundopatitas.mx/" target="_blank">Mundo Patitas A.C.</a><br>
+                    Redes: <a href="https://www.facebook.com/MundoPatitas/" target="_blank">Facebook</a>
+                </li>
+                <li>
+                    <img class="logo" src="https://fah.com.mx/wp-content/uploads/2023/03/header_logo.png" alt="Logo Fundación Antonio Haghenbeck">
+                    <a href="https://fah.com.mx/" target="_blank">Fundación Antonio Haghenbeck</a><br>
+                    Teléfono: 55 3330 4741<br>
+                    Redes: <a href="https://www.facebook.com/fundacionantoniohaghenbeck" target="_blank">Facebook</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="events">
+            <h2>Próximos Eventos de Adopción y Recaudación:</h2>
+            <ul>
+                <li>
+                    <p><b>Adoptatón 2025</b></p>
+                    <p>Lugar: Segunda Sección del Bosque de Chapultepec</p>
+                    <p>Fecha: 3 y 4 de mayo</p>
+                    <p>Más información: <a href="https://www.ejecentral.com.mx/nuestro-eje/adopcion-de-gatos-y-perros-en-cdmx-cuando-donde-y-requisitos" target="_blank">Adoptatón CDMX</a></p>
+                </li>
+                <li>
+                    <p><b>Feria de Adopción en Centro de Adopción de Perros y Gatos</b></p>
+                    <p>Lugar: Benito Juárez, CDMX</p>
+                    <p>Evento recurrente</p> 
+                    <p>Más información: <a href="https://dragon-isaac21.wixsite.com/adoptaamor" target="_blank">Adopta Amor</a></p>
+                </li>
+            </ul>
+        </div>
+        </div>
+
+       </div> 
+       <%- include('templates/modalUsuario', { usuario: usuario || {} }) %>
+    <div class="footer">
+        <%- include('templates/footer')%>
+    </div>
+    <script src="/javascrip/modal.js" > </script>
+</body>
+</html>
