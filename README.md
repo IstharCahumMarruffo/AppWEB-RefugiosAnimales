@@ -22,20 +22,26 @@ Esta es una aplicación web para facilitar la adopción de animales, desarrollad
 
 ##  Capturas de pantalla
 
+### Home
+![Home](static/public/img/inigio.png)
+
 ### Inicio de sesión
-![Inicio de sesión](static/img/login.png)
+![Inicio de sesión](static/public/img/login.png)
 
 ### Registro de usuario
-![Registro](static/img/registro.png)
+![Registro](static/public/img/registro.png)
 
 ### Filtro
-![Animales con filtros](static/img/filtro.png)
+![Animales con filtros](static/public/img/filtro.png)
 
 ### Vista de animales con filtro
-![Detalle del animal](static/img/resultado.png)
+![Detalle del animal](static/public/img/resultado.png)
 
 ### Panel de administración (CRUD)
-![Panel de administración](static/img/administrarcuenta.png)
+![Panel de administración](static/public/img/administrarcuenta.png)
+
+### Otras vistas
+![Refugios](static/public/img/refugios.png)
 
 ##  Licencia
 
