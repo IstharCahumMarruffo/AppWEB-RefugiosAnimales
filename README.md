@@ -23,10 +23,10 @@ Esta es una aplicación web para facilitar la adopción de animales, desarrollad
 ##  Capturas de pantalla
 
 ### Home
-![Home](static/public/img/inigio.png)
+![Home](/img/inicio.png)
 
 ### Inicio de sesión
-![Inicio de sesión](static/public/img/login.png)
+![Inicio de sesión](/img/login.png)
 
 ### Registro de usuario
 ![Registro](static/public/img/registro.png)
