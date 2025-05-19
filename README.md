@@ -23,19 +23,28 @@ Esta es una aplicación web para facilitar la adopción de animales, desarrollad
 ##  Capturas de pantalla
 
 ### Inicio de sesión
-![Inicio de sesión](static/images/login.png)
+![Inicio de sesión](static/img/login.png)
 
 ### Registro de usuario
-![Registro](static/images/register.png)
+![Registro](static/img/registro.png)
 
-### Vista de animales con filtros
-![Animales con filtros](static/images/animales_filtros.png)
+### Filtro
+![Animales con filtros](static/imag/filtro.png)
 
-### Detalles y adopción
-![Detalle del animal](static/images/detalle_animal.png)
+### Vista de animales con filtro
+![Detalle del animal](static/img/resultado.png)
 
 ### Panel de administración (CRUD)
-![Panel de administración](static/images/admin_panel.png)
+![Panel de administración](static/img/administrarcuenta.png)
 
-## 📂 Estructura del proyecto (resumen)
+##  Licencia
+
+Este proyecto está protegido. No está permitido su uso o reproducción sin autorización expresa. Si deseas más información, por favor contacta al autor.
+
+## Autor
+
+**Isthar Cahum Marruffo**  
+Ingeniería en Computación - UAM Azcapotzalco  
+Email: [istharcahummarruffo@gmail.com]
+
 
