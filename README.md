@@ -32,7 +32,7 @@ Esta es una aplicación web para facilitar la adopción de animales, desarrollad
 ![Registro](static/public/img/registro.png)
 
 ### Filtro
-![Animales con filtros](static/public/img/filtro.png)
+![Animales con filtros](/img/filtro.png)
 
 ### Vista de animales con filtro
 ![Detalle del animal](static/public/img/resultado.png)
