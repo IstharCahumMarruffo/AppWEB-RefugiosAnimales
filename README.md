@@ -38,7 +38,7 @@ Esta es una aplicación web para facilitar la adopción de animales, desarrollad
 ![Detalle del animal](/public/img/resultado.png)
 
 ### Panel de administración (CRUD)
-![Panel de administración](/public/img/administrarcuenta.png)
+![Panel de administración](public/img/administrarcuenta.png)
 
 ### Otras vistas
 ![Refugios](/public/img/refugios.png)
