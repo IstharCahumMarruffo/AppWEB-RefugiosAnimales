@@ -23,7 +23,7 @@ Esta es una aplicación web para facilitar la adopción de animales, desarrollad
 ##  Capturas de pantalla
 
 ### Home
-![Home](/public/static/img/inicio.png)
+![Home](/public/img/inicio.png)
 
 ### Inicio de sesión
 ![Inicio de sesión](/img/login.png)
